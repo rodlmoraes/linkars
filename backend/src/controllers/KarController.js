@@ -48,6 +48,16 @@ module.exports = {
     })
   },
 
+  async save(req, res) {
+    const { id } = req.params
+
+    Kar.findByIdAndUpdate(id, { $set: req.body }, { new: true }, (err, kar) => {
+      if (err || !kar) return res.status(404).send(err)
+
+      return res.json(kar)
+    })
+  },
+
   async destroy(req, res) {
     const { id } = req.params
 

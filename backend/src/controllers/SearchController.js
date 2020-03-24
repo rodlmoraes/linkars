@@ -4,11 +4,20 @@ module.exports = {
   async index(req, res) {
     const { q } = req.query
 
-    const vehicleRegex = new RegExp(q);
+    const searchRegex = new RegExp(q);
     const kars = await Kar.find({
-      'vehicle': {
-        $regex: vehicleRegex, options: 'i'
-      }
+      $or: [
+        {
+          vehicle: {
+            $regex: searchRegex, $options: 'i'
+          }
+        },
+        {
+          brand: {
+            $regex: searchRegex, $options: 'i'
+          }
+        }
+      ]
     })
 
     return res.json(kars)
