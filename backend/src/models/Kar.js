@@ -5,7 +5,6 @@ const KarSchema = new mongoose.Schema({
   brand: String,
   year: Number,
   description: String,
-  timestamps: true
-})
+}, { timestamps: true })
 
 module.exports = mongoose.model('Kar', KarSchema)
