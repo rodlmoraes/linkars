@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <form #form="ngForm" [formGroup]="karForm" class="form col-md-4" (submit)="submit()">
+            <h4 class="text-center" *ngIf="!data._id">
+                Create Kar
+            </h4>
+            <h4 class="text-center" *ngIf="data._id">
+                Update Kar
+            </h4>
+
+            <mat-form-field>
+                <input matInput placeholder="Vehicle" formControlName="vehicle" required />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Brand" formControlName="brand" required />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Year" formControlName="year" required />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Description" formControlName="description" required />
+            </mat-form-field>
+
+            <div class="ml-3 mt-3">
+                <button type="submit" class="btn btn-primary btn-block">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
