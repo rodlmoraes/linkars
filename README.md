@@ -1,4 +1,4 @@
-# LinkKars
+# LinKars
 
 O LinKars é um app simples, onde você pode fazer operações básicas com carros, como criar, deletar, atualizar e vê-los listados
 
